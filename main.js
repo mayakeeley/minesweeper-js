@@ -21,13 +21,10 @@ const createMines = (mines, columns, rows) => {
             for (let j = y - 1; j <= y + 1; j++) {
                 // if co-ordinates are within bounds of grid
                 if (i >=0 && i < rows && j >=0 && j < columns) {
-                    // if co-ordinates are either side to side or up and down from mine
-                    if (Math.abs(i - x) + Math.abs(j - y) === 1) {
-                        // if co-ordinates do not contain a mine
+                    // if co-ordinates are either side to side or up and down from mine and co-ordinates do not contain a mine
                         if (grid[i][j] !== 'x') {
                             grid[i][j] = grid[i][j] + 1;
                         }
-                    }
                 }
             }
         }
